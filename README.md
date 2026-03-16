@@ -119,5 +119,3 @@ Catppuccin-Black/
 **GTK2** — imports Breeze-gtk widget files individually, then overrides all `gtk-color-scheme` keys.
 
 ---
-
-echo "done"
