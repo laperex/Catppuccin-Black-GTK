@@ -1,0 +1,31 @@
+# ~/.config/gtk-2.0/gtkrc
+# Catppuccin Mocha Black — GTK2 color override
+# Requires Breeze-gtk installed at /usr/share/themes/Breeze-Dark/
+
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/widgets/default"
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/widgets/buttons"
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/widgets/menu"
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/widgets/entry"
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/widgets/notebook"
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/widgets/range"
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/widgets/scrollbar"
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/widgets/toolbar"
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/widgets/progressbar"
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/widgets/misc"
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/widgets/styles"
+
+gtk-color-scheme = "text_color:#cdd6f4"
+gtk-color-scheme = "base_color:#000000"
+gtk-color-scheme = "insensitive_base_color:#090b10"
+gtk-color-scheme = "fg_color:#cdd6f4"
+gtk-color-scheme = "bg_color:#000000"
+gtk-color-scheme = "selected_fg_color:#000000"
+gtk-color-scheme = "selected_bg_color:#b4befe"
+gtk-color-scheme = "button_fg_color:#cdd6f4"
+gtk-color-scheme = "tooltip_fg_color:#cdd6f4"
+gtk-color-scheme = "tooltip_bg_color:#090b10"
+gtk-color-scheme = "insensitive_fg_color:#585b70"
+gtk-color-scheme = "insensitive_text_color:#45475a"
+gtk-color-scheme = "button_insensitive_fg_color:#585b70"
+gtk-color-scheme = "button_active:#b4befe"
+gtk-color-scheme = "border_color:#45475a"

@@ -1,0 +1,410 @@
+/* ============================================================
+   Catppuccin + Kvantum-matched GTK theme
+   Mirrors the dolphin kvantum config aesthetic:
+   - Near-black / transparent bases
+   - Lavender (#B4BEFE) accent
+   - CDD6F4 text, 585B70 disabled
+   - ~90% window opacity (reduce_window_opacity=10)
+
+   Place in ~/.config/gtk-3.0/gtk.css  AND/OR
+              ~/.config/gtk-4.0/gtk.css
+   ============================================================ */
+   
+@import url("/usr/share/themes/Breeze-Dark/gtk-3.0/gtk.css");
+
+/* ── Catppuccin Mocha palette ──────────────────────────────── */
+@define-color ctp_rosewater  #f5e0dc;
+@define-color ctp_flamingo   #f2cdcd;
+@define-color ctp_pink       #f5c2e7;
+@define-color ctp_mauve      #cba6f7;
+@define-color ctp_red        #f38ba8;
+@define-color ctp_maroon     #eba0ac;
+@define-color ctp_peach      #fab387;
+@define-color ctp_yellow     #f9e2af;
+@define-color ctp_green      #a6e3a1;
+@define-color ctp_teal       #94e2d5;
+@define-color ctp_sky        #89dceb;
+@define-color ctp_sapphire   #74c7ec;
+@define-color ctp_blue       #89b4fa;
+@define-color ctp_lavender   #b4befe;
+@define-color ctp_text       #cdd6f4;
+@define-color ctp_subtext1   #bac2de;
+@define-color ctp_subtext0   #a6adc8;
+@define-color ctp_overlay2   #9399b2;
+@define-color ctp_overlay1   #7f849c;
+@define-color ctp_overlay0   #6c7086;
+@define-color ctp_surface2   #585b70;
+@define-color ctp_surface1   #45475a;
+@define-color ctp_surface0   #313244;
+@define-color ctp_base       #1e1e2e;
+@define-color ctp_mantle     #181825;
+@define-color ctp_crust      #11111b;
+
+/* ── Kvantum-matched near-black tokens ─────────────────────── */
+/* window.color=#000000, button.color=#090B10                   */
+@define-color kv_window      #000000;
+@define-color kv_button      #090b10;
+/* base.color=#00000000 — fully transparent base               */
+@define-color kv_base        rgba(0, 0, 0, 0);
+/* highlight = Lavender per kvantum config                      */
+@define-color kv_highlight   #b4befe;
+@define-color kv_hl_text     #000000;
+/* surface borders — light.color / mid_light.color = #45475A   */
+@define-color kv_border      #45475a;
+
+/* ── Breeze variable remaps ────────────────────────────────── */
+
+@define-color theme_fg_color_breeze          @ctp_text;
+@define-color theme_text_color_breeze        @ctp_text;
+@define-color theme_unfocused_fg_color_breeze   @ctp_subtext1;
+@define-color theme_unfocused_text_color_breeze @ctp_subtext1;
+
+@define-color theme_bg_color_breeze          @kv_window;
+@define-color theme_base_color_breeze        @kv_window;
+@define-color theme_unfocused_bg_color_breeze  @kv_window;
+@define-color theme_unfocused_base_color_breeze @kv_window;
+@define-color content_view_bg_breeze         @kv_window;
+
+@define-color theme_selected_bg_color_breeze           @kv_highlight;
+@define-color theme_selected_fg_color_breeze           @kv_hl_text;
+@define-color theme_hovering_selected_bg_color_breeze  @kv_highlight;
+@define-color theme_view_hover_decoration_color_breeze @kv_highlight;
+@define-color theme_view_active_decoration_color_breeze @kv_highlight;
+@define-color theme_unfocused_selected_bg_color_breeze  rgba(180, 190, 254, 0.5);
+@define-color theme_unfocused_selected_bg_color_alt_breeze @kv_highlight;
+@define-color theme_unfocused_selected_fg_color_breeze @kv_hl_text;
+
+@define-color insensitive_bg_color_breeze              @kv_button;
+@define-color insensitive_fg_color_breeze              rgba(88, 91, 112, 0.8);
+@define-color insensitive_base_color_breeze            rgba(88, 91, 112, 0.35);
+@define-color insensitive_base_fg_color_breeze         @ctp_surface2;
+@define-color insensitive_selected_bg_color_breeze     rgba(180, 190, 254, 0.35);
+@define-color insensitive_selected_fg_color_breeze     rgba(205, 214, 244, 0.35);
+@define-color insensitive_unfocused_bg_color_breeze    @kv_button;
+@define-color insensitive_unfocused_fg_color_breeze    rgba(88, 91, 112, 0.8);
+@define-color insensitive_unfocused_selected_fg_color_breeze rgba(205, 214, 244, 0.35);
+@define-color theme_unfocused_view_text_color_breeze   rgba(205, 214, 244, 0.35);
+@define-color theme_unfocused_view_bg_color_breeze     @kv_window;
+@define-color insensitive_borders_breeze               rgba(69, 71, 90, 0.35);
+@define-color unfocused_insensitive_borders_breeze     rgba(69, 71, 90, 0.35);
+
+@define-color borders_breeze           @kv_border;
+@define-color unfocused_borders_breeze @kv_border;
+
+@define-color theme_button_background_normal_breeze    @kv_button;
+@define-color theme_button_foreground_normal_breeze    @ctp_text;
+@define-color theme_button_foreground_active_breeze    @kv_hl_text;
+@define-color theme_button_decoration_hover_breeze     @kv_highlight;
+@define-color theme_button_decoration_focus_breeze     @ctp_lavender;
+
+@define-color theme_button_background_insensitive_breeze        rgba(9, 11, 16, 0.35);
+@define-color theme_button_decoration_hover_insensitive_breeze  rgba(180, 190, 254, 0.35);
+@define-color theme_button_decoration_focus_insensitive_breeze  rgba(180, 190, 254, 0.35);
+@define-color theme_button_foreground_insensitive_breeze        rgba(205, 214, 244, 0.35);
+@define-color theme_button_foreground_active_insensitive_breeze rgba(205, 214, 244, 0.35);
+
+@define-color theme_button_background_backdrop_breeze        @kv_button;
+@define-color theme_button_decoration_hover_backdrop_breeze  @kv_highlight;
+@define-color theme_button_decoration_focus_backdrop_breeze  @ctp_lavender;
+@define-color theme_button_foreground_backdrop_breeze        @ctp_subtext1;
+@define-color theme_button_foreground_active_backdrop_breeze @ctp_subtext1;
+
+@define-color theme_button_background_backdrop_insensitive_breeze        rgba(9, 11, 16, 0.35);
+@define-color theme_button_decoration_hover_backdrop_insensitive_breeze  rgba(180, 190, 254, 0.35);
+@define-color theme_button_decoration_focus_backdrop_insensitive_breeze  rgba(180, 190, 254, 0.35);
+@define-color theme_button_foreground_backdrop_insensitive_breeze        rgba(205, 214, 244, 0.35);
+@define-color theme_button_foreground_active_backdrop_insensitive_breeze rgba(205, 214, 244, 0.35);
+
+@define-color warning_color_breeze  @ctp_yellow;
+@define-color error_color_breeze    @ctp_red;
+@define-color success_color_breeze  @ctp_green;
+@define-color warning_color_backdrop_breeze  @ctp_yellow;
+@define-color error_color_backdrop_breeze    @ctp_red;
+@define-color success_color_backdrop_breeze  @ctp_green;
+@define-color warning_color_insensitive_breeze rgba(249, 226, 175, 0.35);
+@define-color error_color_insensitive_breeze   rgba(243, 139, 168, 0.35);
+@define-color success_color_insensitive_breeze rgba(166, 227, 161, 0.35);
+@define-color warning_color_insensitive_backdrop_breeze rgba(249, 226, 175, 0.35);
+@define-color error_color_insensitive_backdrop_breeze   rgba(243, 139, 168, 0.35);
+@define-color success_color_insensitive_backdrop_breeze rgba(166, 227, 161, 0.35);
+
+/* link.color=#F5E0DC  link.visited.color=#89B4FA per kvantum  */
+@define-color link_color_breeze         @ctp_rosewater;
+@define-color link_visited_color_breeze @ctp_blue;
+
+@define-color theme_titlebar_background_breeze          @kv_window;
+@define-color theme_titlebar_foreground_breeze          @ctp_text;
+@define-color theme_titlebar_background_light_breeze    @kv_window;
+@define-color theme_titlebar_foreground_backdrop_breeze @ctp_overlay1;
+@define-color theme_titlebar_background_backdrop_breeze @kv_window;
+@define-color theme_titlebar_foreground_insensitive_breeze rgba(205, 214, 244, 0.35);
+@define-color theme_titlebar_foreground_insensitive_backdrop_breeze rgba(127, 132, 156, 0.35);
+
+@define-color tooltip_text_breeze       @ctp_text;
+@define-color tooltip_background_breeze @kv_button;
+@define-color tooltip_border_breeze     @kv_border;
+
+@define-color print_paper_backdrop_breeze white;
+
+/* ── GTK API re-defs ───────────────────────────────────────── */
+@define-color theme_fg_color            @ctp_text;
+@define-color theme_text_color          @ctp_text;
+@define-color theme_bg_color            @kv_window;
+@define-color theme_base_color          @kv_window;
+@define-color theme_selected_bg_color   @kv_highlight;
+@define-color theme_selected_fg_color   @kv_hl_text;
+@define-color insensitive_bg_color      @kv_button;
+@define-color insensitive_fg_color      rgba(88, 91, 112, 0.8);
+@define-color insensitive_base_color    rgba(88, 91, 112, 0.35);
+@define-color theme_unfocused_fg_color    @ctp_subtext1;
+@define-color theme_unfocused_text_color  @ctp_subtext1;
+@define-color theme_unfocused_bg_color    @kv_window;
+@define-color theme_unfocused_base_color  @kv_window;
+@define-color theme_unfocused_selected_bg_color  rgba(180, 190, 254, 0.5);
+@define-color theme_unfocused_selected_fg_color  @kv_hl_text;
+@define-color borders                   @kv_border;
+@define-color unfocused_borders         @kv_border;
+@define-color warning_color             @ctp_yellow;
+@define-color error_color               @ctp_red;
+@define-color success_color             @ctp_green;
+@define-color content_view_bg           @kv_window;
+@define-color text_view_bg              @kv_window;
+
+/* ── Replace hardcoded #3daee9 → Lavender ──────────────────── */
+
+entry:focus,
+spinbutton:not(.vertical):focus { border-color: @kv_highlight; }
+
+treeview.view header button:hover,
+treeview.view header button:active { background-color: alpha(@kv_highlight, 0.3); }
+
+treeview.view:hover {
+    border-left-color: @kv_highlight;
+    border-top-color:  @kv_highlight;
+}
+
+notebook > header.top    > tabs > tab:checked { border-top-color:    @kv_highlight; }
+notebook > header.bottom > tabs > tab:checked { border-bottom-color: @kv_highlight; }
+notebook > header.left   > tabs > tab:checked { border-left-color:   @kv_highlight; }
+notebook > header.right  > tabs > tab:checked { border-right-color:  @kv_highlight; }
+
+notebook > header.top    > tabs > tab.reorderable-page:checked { box-shadow: inset 0px -3px 0px 0px @kv_highlight, inset -3px 0px 0px 0px @kv_window; }
+notebook > header.bottom > tabs > tab.reorderable-page:checked { box-shadow: inset 0px -3px 0px 0px @kv_highlight, inset -3px 0px 0px 0px @kv_window; }
+
+scale highlight {
+    background: linear-gradient(alpha(@kv_highlight, 0.5), alpha(@kv_highlight, 0.5)),
+                linear-gradient(@kv_window, @kv_window);
+    border-color: @kv_highlight;
+}
+progressbar progress {
+    background: linear-gradient(alpha(@kv_highlight, 0.5), alpha(@kv_highlight, 0.5)),
+                linear-gradient(@kv_window, @kv_window);
+    border-color: @kv_highlight;
+}
+levelbar block:not(.empty) {
+    border-color: @kv_highlight;
+    background: linear-gradient(alpha(@kv_highlight, 0.5), alpha(@kv_highlight, 0.5)),
+                linear-gradient(@kv_window, @kv_window);
+}
+
+switch:checked {
+    background: alpha(@kv_highlight, 0.25);
+    border-color: @kv_highlight;
+}
+switch:hover slider { border-color: @kv_highlight; }
+
+check:indeterminate, check:checked,
+radio:indeterminate, radio:checked {
+    border-color: @kv_highlight;
+    background-color: alpha(@kv_highlight, 0.25);
+}
+
+viewswitcher button:checked > stack,
+headerbar viewswitcher button:checked > stack,
+hdyviewswitcher > button:checked > stack,
+headerbar hdyviewswitcher > button:checked > stack {
+    border-top-color:    @kv_highlight;
+    border-bottom-color: @kv_highlight;
+}
+
+/* ── Transparency — mirrors reduce_window_opacity=10 (90%) ─── */
+/*   base.color=#00000000 means content views fully transparent  */
+
+/* focused and unfocused intentionally identical */
+window,
+.background,
+window:backdrop,
+.background:backdrop {
+    background-color: rgba(0, 0, 0, 0.90);
+}
+
+/* base = fully transparent, content shows wallpaper */
+.view,
+textview,
+textview text,
+.view text {
+    background-color: rgba(0, 0, 0, 0);
+    color: @ctp_text;
+}
+.view:backdrop,
+textview:backdrop,
+textview text:backdrop,
+.view text:backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    color: @ctp_text;
+}
+
+/* list rows — transparent base, but selection must be visible */
+list,
+list row,
+list row:backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    color: @ctp_text;
+}
+
+/* explicit selection tint — covers GTK3 listbox, treeview, popover rows */
+list row:selected,
+list row:selected:focus,
+list row:selected:hover,
+list row:selected:backdrop,
+row:selected,
+row:selected:focus,
+row:selected:backdrop,
+.view:selected,
+.view:selected:focus,
+.view:selected:backdrop,
+treeview.view:selected,
+treeview.view:selected:focus,
+treeview.view:selected:backdrop,
+.sidebar row:selected,
+.sidebar row:selected:focus,
+.sidebar row:selected:backdrop {
+    background-color: @kv_highlight;
+    color: @kv_hl_text;
+}
+
+/* sidebar — very dark, slight transparency */
+.sidebar,
+placessidebar,
+stacksidebar.sidebar {
+    background-color: rgba(0, 0, 0, 0.72);
+}
+.sidebar:backdrop,
+placessidebar:backdrop {
+    background-color: rgba(0, 0, 0, 0.72);
+}
+
+/* headerbars / titlebars — same focused and unfocused */
+headerbar,
+headerbar:backdrop {
+    background-color: rgba(0, 0, 0, 0.88);
+    background-image: none;
+}
+
+/* popovers / menus — button.color=#090B10 at ~90% */
+popover.background {
+    background-color: rgba(9, 11, 16, 0.92);
+}
+menu, .menu {
+    background-color: rgba(9, 11, 16, 0.90);
+}
+
+/* notebook tab bar — #090b10 at 85% */
+notebook > header,
+notebook > header:backdrop {
+    background-color: rgba(9, 11, 16, 0.85);
+    border-color: @kv_border;
+}
+
+/* inactive tabs — dim text, transparent */
+notebook > header > tabs > tab {
+    background-color: transparent;
+    color: @ctp_surface2;
+}
+
+/* active tab — slightly more opaque lift, still transparent */
+notebook > header > tabs > tab:checked {
+    background-color: rgba(9, 11, 16, 0.70);
+    color: @ctp_text;
+}
+
+/* hover */
+notebook > header > tabs > tab:hover:not(:checked) {
+    background-color: rgba(9, 11, 16, 0.45);
+    color: @ctp_subtext1;
+}
+
+/* toolbars */
+.toolbar, toolbar,
+searchbar > revealer > box,
+.inline-toolbar {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* scrollbars blend into the dark bg */
+scrollbar {
+    background-color: rgba(0, 0, 0, 0.50);
+    border-color: rgba(0, 0, 0, 0.50);
+}
+
+/* tooltips */
+tooltip.background {
+    background-color: rgba(9, 11, 16, 0.94);
+}
+
+/* path bar */
+.path-bar {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* disabled text matches kvantum disabled.text.color=#585B70 */
+*:disabled, label:disabled {
+    color: @ctp_surface2;
+}
+
+/* ── Border radius — squares stay square, circles stay round ─ */
+
+/* boxes, panels, containers */
+window, .background,
+headerbar, .titlebar,
+.sidebar, placessidebar, stacksidebar.sidebar,
+notebook > header,
+notebook > header > tabs > tab,
+notebook > stack,
+frame, .frame,
+list, list row, row,
+.view, textview,
+actionbar > revealer > box,
+.toolbar, toolbar,
+searchbar > revealer > box,
+.inline-toolbar,
+.path-bar,
+paned > separator { border-radius: 0; }
+
+/* interactive widgets — rectangular */
+button, .button,
+entry, spinbutton,
+check,
+combobox > box > button.combo,
+combobox button,
+progressbar trough,
+progressbar progress,
+levelbar trough,
+levelbar block,
+scale trough,
+scale highlight,
+popover.background,
+popover,
+menu, .menu,
+menuitem,
+tooltip, tooltip.background { border-radius: 0; }
+
+/* scrollbar track — square */
+scrollbar trough { border-radius: 0; }
+
+/* scrollbar handle — keep a very subtle radius so it's
+   distinguishable from the track, but not a full pill */
+scrollbar slider { border-radius: 2px; }
+
+/* TRUE circles — leave untouched */
+/* radio, switch, switch slider, scale slider stay as-is */
